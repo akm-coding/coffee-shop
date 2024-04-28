@@ -23,6 +23,7 @@ import {
   PopUpAnimation,
 } from '../../components';
 import CustomIcon from '../../components/CustomIcon';
+import {ORDER_HISTORY_SCREEN} from '../../constants/Routes';
 
 const PaymentList = [
   {
@@ -32,17 +33,17 @@ const PaymentList = [
   },
   {
     name: 'Google Pay',
-    icon: require('../assets/app_images/gpay.png'),
+    icon: require('../../assets/app_images/gpay.png'),
     isIcon: false,
   },
   {
     name: 'Apple Pay',
-    icon: require('../assets/app_images/applepay.png'),
+    icon: require('../../assets/app_images/applepay.png'),
     isIcon: false,
   },
   {
     name: 'Amazon Pay',
-    icon: require('../assets/app_images/amazonpay.png'),
+    icon: require('../../assets/app_images/amazonpay.png'),
     isIcon: false,
   },
 ];
@@ -62,7 +63,7 @@ const PaymentScreen = ({navigation, route}: any) => {
     calculateCartPrice();
     setTimeout(() => {
       setShowAnimation(false);
-      navigation.navigate('History');
+      navigation.navigate(ORDER_HISTORY_SCREEN);
     }, 2000);
   };
 
@@ -73,7 +74,7 @@ const PaymentScreen = ({navigation, route}: any) => {
       {showAnimation ? (
         <PopUpAnimation
           style={styles.LottieAnimation}
-          source={require('../lottie/successful.json')}
+          source={require('../../assets/lottie/successful.json')}
         />
       ) : (
         <></>
