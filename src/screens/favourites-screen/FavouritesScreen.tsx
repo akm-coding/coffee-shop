@@ -16,6 +16,7 @@ import {
   HeaderBar,
 } from '../../components';
 import {DETAILS_SCREEN} from '../../constants/Routes';
+import {styles} from './styles';
 
 const FavoritesScreen = ({navigation}: any) => {
   const FavoritesList = useStore((state: any) => state.FavoritesList);
@@ -77,26 +78,5 @@ const FavoritesScreen = ({navigation}: any) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-  },
-  ScrollViewInnerView: {
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  ItemContainer: {
-    flex: 1,
-  },
-  ListItemContainer: {
-    paddingHorizontal: SPACING.space_20,
-    gap: SPACING.space_20,
-  },
-});
 
 export default FavoritesScreen;

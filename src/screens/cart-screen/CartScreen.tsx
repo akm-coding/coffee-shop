@@ -15,6 +15,7 @@ import CartItem from '../../components/CardItem';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {ParamsList} from '../../models/ScreenParamsList.models';
 import {DETAILS_SCREEN, PAYMENT_SCREEN} from '../../constants/Routes';
+import {styles} from './styles';
 
 const CartScreen = ({navigation}: NativeStackScreenProps<ParamsList>) => {
   const CartList = useStore((state: any) => state.CartList);
@@ -102,26 +103,5 @@ const CartScreen = ({navigation}: NativeStackScreenProps<ParamsList>) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-  },
-  ScrollViewInnerView: {
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  ItemContainer: {
-    flex: 1,
-  },
-  ListItemContainer: {
-    paddingHorizontal: SPACING.space_20,
-    gap: SPACING.space_20,
-  },
-});
 
 export default CartScreen;
