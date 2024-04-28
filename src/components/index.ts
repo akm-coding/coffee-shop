@@ -6,3 +6,6 @@ export {default as CoffeeCard} from './CoffeeCard';
 export {default as PaymentFooter} from './PaymentFooter';
 export {default as EmptyListAnimation} from './EmptyListAnimation';
 export {default as CardItem} from './CardItem';
+export {default as FavouritesItemCard} from './FavouritesItemCard';
+export {default as PopUpAnimation} from './PopUpAnimation';
+export {default as PaymentMethod} from './PaymentMethod';

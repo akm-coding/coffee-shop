@@ -10,8 +10,11 @@ import {
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 import {useStore} from '../../store/store';
 import {COLORS, SPACING} from '../../theme/theme';
-import {EmptyListAnimation, HeaderBar} from '../../components';
-import FavoritesItemCard from '../../components/FavouritesItemCard';
+import {
+  EmptyListAnimation,
+  FavouritesItemCard,
+  HeaderBar,
+} from '../../components';
 
 const FavoritesScreen = ({navigation}: any) => {
   const FavoritesList = useStore((state: any) => state.FavoritesList);
@@ -49,7 +52,7 @@ const FavoritesScreen = ({navigation}: any) => {
                       });
                     }}
                     key={data.id}>
-                    <FavoritesItemCard
+                    <FavouritesItemCard
                       id={data.id}
                       imagelink_portrait={data.imagelink_portrait}
                       name={data.name}
