@@ -4,6 +4,6 @@ export type ParamsList = {
   FAVOURITES_SCREEN: undefined;
   ORDER_HISTORY_SCREEN: undefined;
   DETAILS_SCREEN: {index: string; id: string; type: string};
-  PAYMENT_SCREEN: undefined;
+  PAYMENT_SCREEN: {amount: string};
   BOTTOM_TAB: undefined;
 };
