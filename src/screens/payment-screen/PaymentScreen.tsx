@@ -24,6 +24,9 @@ import {
 } from '../../components';
 import CustomIcon from '../../components/CustomIcon';
 import {ORDER_HISTORY_SCREEN} from '../../constants/Routes';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {ParamsList} from '../../models/ScreenParamsList.models';
+import {RouteProp, useRoute} from '@react-navigation/native';
 
 const PaymentList = [
   {
@@ -48,7 +51,10 @@ const PaymentList = [
   },
 ];
 
-const PaymentScreen = ({navigation, route}: any) => {
+type Props = RouteProp<ParamsList, 'PAYMENT_SCREEN'>;
+
+const PaymentScreen = ({navigation}: NativeStackScreenProps<ParamsList>) => {
+  const route = useRoute<Props>();
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
   const addToOrderHistoryListFromCart = useStore(
     (state: any) => state.addToOrderHistoryListFromCart,

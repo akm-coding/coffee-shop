@@ -23,6 +23,8 @@ import {useStore} from '../../store/store';
 import {DETAILS_SCREEN} from '../../constants/Routes';
 import {CoffeeCard, HeaderBar} from '../../components';
 import CustomIcon from '../../components/CustomIcon';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {ParamsList} from '../../models/ScreenParamsList.models';
 
 const getCategoriesFromData = (data: any) => {
   let temp: any = {};
@@ -47,7 +49,7 @@ const getCoffeeList = (category: string, data: any) => {
   }
 };
 
-const HomeScreen = ({navigation}: any) => {
+const HomeScreen = ({navigation}: NativeStackScreenProps<ParamsList>) => {
   const CoffeeList = useStore((state: any) => state.CoffeeList);
   const BeanList = useStore((state: any) => state.BeanList);
   const addToCart = useStore((state: any) => state.addToCart);

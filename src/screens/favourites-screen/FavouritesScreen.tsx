@@ -15,6 +15,7 @@ import {
   FavouritesItemCard,
   HeaderBar,
 } from '../../components';
+import {DETAILS_SCREEN} from '../../constants/Routes';
 
 const FavoritesScreen = ({navigation}: any) => {
   const FavoritesList = useStore((state: any) => state.FavoritesList);
@@ -45,7 +46,7 @@ const FavoritesScreen = ({navigation}: any) => {
                 {FavoritesList.map((data: any) => (
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.push('Details', {
+                      navigation.push(DETAILS_SCREEN, {
                         index: data.index,
                         id: data.id,
                         type: data.type,

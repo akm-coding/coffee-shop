@@ -19,8 +19,14 @@ import {useStore} from '../../store/store';
 import {PaymentFooter} from '../../components';
 import ImageBackgroundInfo from '../../components/ImageBackgroundInfo';
 import {CART_SCREEN} from '../../constants/Routes';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {ParamsList} from '../../models/ScreenParamsList.models';
+import {RouteProp, useRoute} from '@react-navigation/native';
 
-const DetailsScreen = ({navigation, route}: any) => {
+type Props = RouteProp<ParamsList, 'DETAILS_SCREEN'>;
+
+const DetailsScreen = ({navigation}: NativeStackScreenProps<ParamsList>) => {
+  const route = useRoute<Props>();
   const ItemOfIndex = useStore((state: any) =>
     route.params.type == 'Coffee' ? state.CoffeeList : state.BeanList,
   )[route.params.index];
